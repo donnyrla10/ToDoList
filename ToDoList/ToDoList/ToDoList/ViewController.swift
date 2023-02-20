@@ -28,9 +28,6 @@ class ViewController: UIViewController {
         self.tableView.setEditing(false, animated: true)
     }
     
-    @IBAction func tapAddButton(_ sender: UIBarButtonItem) {
-    }
-    
     @IBAction func tapEditButton(_ sender: UIBarButtonItem) {
         guard !self.tasks.isEmpty else { return }
         self.navigationItem.leftBarButtonItem = doneButton
@@ -39,25 +36,36 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDataSource {
-    //섹션 내 행 개수
+    //섹션 내 행 개수 -> 리스트 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return tasks.count
     }
-    
+
     //해당 row(indexPath) 위치에 어떤 cell을 넣을 것인지! 넣을 cell 반환
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //가져올 셀의 identifier 값을 넣어야 한다.
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) //storyboard에서 정의한 cell을 dequeueReusableCell 메소드를 통해 가져온다.
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ToDoListViewCell
+        //storyboard에서 정의한 cell을 dequeueReusableCell 메소드를 통해 가져온다.
+        
         let task = self.tasks[indexPath.row] //indexPath.row -> 셀 위치 0~task.count
-        cell.textLabel?.text = task.title //cell의 타이틀 값 넣기
+        cell.titleLabel.text = task.title
         if task.done {
-            cell.accessoryType = .checkmark
+            cell.doneImage.image = UIImage(systemName: "checkmark.circle")
         }else {
-            cell.accessoryType = .none
+            cell.doneImage.image = UIImage(systemName: "circle")
         }
+        
+        //Basic Cell 사용할 경우
+//        if #available(iOS 14.0, *) {
+//            var content = cell.defaultContentConfiguration()
+//            content.text = task.title
+//            cell.contentConfiguration = content
+//        } else {
+//            cell.textLabel?.text = task.title //cell의 타이틀 값 넣기
+//        }
         return cell //storyboard(view)에서 구현된 cell이 테이블뷰에 표시되게 된다
     }
-    
+
     //편집모드에서 삭제를 눌렀을 때, 눌린 셀이 어떤 셀인지 알려준다
     //알려진 셀을 삭제한다.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -69,7 +77,7 @@ extension ViewController: UITableViewDataSource {
             self.doneButtonTap()
         }
     }
-        
+
     //행이 이동가능하도록 한다
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
