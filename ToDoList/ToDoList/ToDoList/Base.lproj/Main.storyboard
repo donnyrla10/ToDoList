@@ -27,42 +27,42 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uB6-lK-Mya">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uB6-lK-Mya">
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  TO DO LIST 🎶 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEe-eI-WgJ" userLabel="TO DO LIST 🎶">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  투두리스트 📌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEe-eI-WgJ" userLabel="TO DO LIST 🎶">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="40.666666666666664"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gTq-sw-gZS">
-                                        <rect key="frame" x="0.0" y="40.666666666666686" width="393" height="708.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="50.666666666666686" width="393" height="698.33333333333326"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="4Qs-Au-2Vd" customClass="ToDoListViewCell" customModule="ToDoList" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="393" height="30.333333969116211"/>
+                                                <rect key="frame" x="0.0" y="50" width="393" height="40.333332061767578"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Qs-Au-2Vd" id="eL7-7m-r2D">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="30.333333969116211"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="40.333332061767578"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="paA-YC-sMG">
-                                                            <rect key="frame" x="20" y="0.0" width="353" height="30.333333333333332"/>
+                                                            <rect key="frame" x="20" y="0.0" width="353" height="40.333333333333336"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ij-np-hcJ">
-                                                                    <rect key="frame" x="4" y="0.0" width="324.66666666666669" height="30.333333333333336"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                    <rect key="frame" x="4" y="0.0" width="314.66666666666669" height="40.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bJ7-4j-KaA">
-                                                                    <rect key="frame" x="334.66666666666669" y="6" width="18.333333333333314" height="18.333333333333332"/>
+                                                                    <rect key="frame" x="324.66666666666669" y="5.9999999999999982" width="28.333333333333314" height="28.333333333333329"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="bJ7-4j-KaA" secondAttribute="height" id="Kff-rq-HFU"/>
                                                                     </constraints>
@@ -72,7 +72,7 @@
                                                                 <constraint firstItem="bJ7-4j-KaA" firstAttribute="leading" secondItem="6Ij-np-hcJ" secondAttribute="trailing" constant="6" id="0Te-NU-aNh"/>
                                                                 <constraint firstItem="bJ7-4j-KaA" firstAttribute="top" secondItem="paA-YC-sMG" secondAttribute="top" constant="6" id="4Gs-mb-3Wm"/>
                                                                 <constraint firstAttribute="bottom" secondItem="bJ7-4j-KaA" secondAttribute="bottom" constant="6" id="Lck-id-nBI"/>
-                                                                <constraint firstAttribute="height" constant="30" id="W66-Me-0hp"/>
+                                                                <constraint firstAttribute="height" constant="40" id="W66-Me-0hp"/>
                                                                 <constraint firstItem="6Ij-np-hcJ" firstAttribute="top" secondItem="paA-YC-sMG" secondAttribute="top" id="XGj-Ae-Rb7"/>
                                                                 <constraint firstItem="6Ij-np-hcJ" firstAttribute="leading" secondItem="paA-YC-sMG" secondAttribute="leading" constant="4" id="c6T-bE-iZ9"/>
                                                                 <constraint firstAttribute="trailing" secondItem="bJ7-4j-KaA" secondAttribute="trailing" constant="6" id="szL-c1-dIr"/>
@@ -121,7 +121,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="89l-2P-qXQ">
                             <connections>
-                                <segue destination="gpK-pd-pHL" kind="show" id="NzC-kJ-baK"/>
+                                <segue destination="gpK-pd-pHL" kind="show" id="95x-dR-Cb1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -180,7 +180,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add an Items ✍️" id="jhm-i9-cfh"/>
                     <connections>
-                        <outlet property="addButton" destination="oRQ-tf-wZg" id="3Yi-ws-xAF"/>
+                        <outlet property="saveButton" destination="oRQ-tf-wZg" id="3Yi-ws-xAF"/>
                         <outlet property="textField" destination="pad-U7-ZSn" id="N9G-5m-wPz"/>
                     </connections>
                 </viewController>
